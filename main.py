@@ -1,10 +1,9 @@
-"""the algorithm consisted of a linear search of letters in a word of minimum length 
-and comparing whether the letters correspond to other letters in words
-O(NM)"""
-
-		
 class Solution:
-        
+	"""The algorithm iterates over letters of the shortest word,
+	 and checks whether the respective letters are the same in other words
+		O(NM) where N = Number of strings
+					M = Length of the largest string string """
+
 	def findMinimumLength(self, arr, length):
 		minimum = len(arr[0])
 
@@ -26,12 +25,10 @@ class Solution:
 				if(arr[j][i] != prefix):
 					return result
 
-			result = result + prefix
-
+			result += prefix
 
 arr = ["flower","flow","flight"]
 length = len(arr)
 solution = Solution()
 result = solution.longestCommonPrefix(arr, length)
 print(result)
-
